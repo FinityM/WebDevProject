@@ -84,15 +84,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     unset($pdo);
 }
 ?>
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Sign Up</title>
-    <link rel="stylesheet" href="css/signup.css">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-</head>
-<body style="background-color: #99aab5; justify-content: center">
+ <?php
+    require "templates/header.php";
+
+ ?>
 <div class="signup-form">
     <h2>Sign Up</h2>
     <p>Please fill this form to create an account.</p>
@@ -125,5 +120,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <p>Already have an account? <a href="login.php">Login here</a>.</p>
     </form>
 </div>
-</body>
-</html>
+
+<?php
+    require "templates/footer.php";
+?>
