@@ -18,6 +18,5 @@ require "templates/header.php";
 </div>
 
 <?php
-echo 'Hello';
 require "templates/footer.php";
 ?>
