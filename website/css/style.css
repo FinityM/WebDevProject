@@ -118,3 +118,53 @@ ul {
     width: 350px;
     padding: 20px;
 }
+
+.crud{
+    width: 600px;
+    margin: 0 auto;
+}
+table tr td:last-child{
+    width: 120px;
+}
+.crud{
+    width: 600px;
+    margin: 0 auto;
+}
+table tr td:last-child{
+    width: 120px;
+}
+
+.crud{
+    width: 600px;
+    margin: 0 auto;
+}
+table tr td:last-child{
+    width: 120px;
+}
+
+.create-table{
+    width: 600px;
+    margin: 0 auto;
+}
+
+.read-table{
+    width: 600px;
+    margin: 0 auto;
+}
+
+.update-table{
+    width: 600px;
+    margin: 0 auto;
+
+}
+
+.delete-table{
+    width: 600px;
+    margin: 0 auto;
+
+}
+
+.error{
+    width: 600px;
+    margin: 0 auto;
+}
