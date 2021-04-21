@@ -35,6 +35,7 @@
                         echo "<tr>";
                         echo "<th>#</th>";
                         echo "<th>Name</th>";
+                        echo "<th>Action</th>";
                         echo "</tr>";
                         echo "</thead>";
                         echo "<tbody>";

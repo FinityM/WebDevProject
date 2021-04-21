@@ -1,38 +1,32 @@
 <?php
-// Process delete operation after confirmation
 if (isset($_POST["id"]) && !empty($_POST["id"])) {
-    // Include config file
-    require_once "config.php";
 
-    // Prepare a delete statement
-    $sql = "DELETE FROM employees WHERE id = :id";
+    require_once "../lib/config.php";
+
+    $sql = "DELETE FROM users WHERE id = :id";
 
     if ($stmt = $pdo->prepare($sql)) {
-        // Bind variables to the prepared statement as parameters
+
         $stmt->bindParam(":id", $param_id);
 
-        // Set parameters
         $param_id = trim($_POST["id"]);
 
-        // Attempt to execute the prepared statement
         if ($stmt->execute()) {
-            // Records deleted successfully. Redirect to landing page
-            header("location: index.php");
+
+            header("location: crudtable.php");
             exit();
         } else {
-            echo "Oops! Something went wrong. Please try again later.";
+            echo "Something went wrong (✖╭╮✖). Please try again later.";
         }
     }
 
-    // Close statement
     unset($stmt);
 
-    // Close connection
     unset($pdo);
 } else {
-    // Check existence of id parameter
+
     if (empty(trim($_GET["id"]))) {
-        // URL doesn't contain id parameter. Redirect to error page
+
         header("location: error.php");
         exit();
     }
@@ -56,10 +50,10 @@ if (isset($_POST["id"]) && !empty($_POST["id"])) {
                 <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
                     <div class="alert alert-danger">
                         <input type="hidden" name="id" value="<?php echo trim($_GET["id"]); ?>"/>
-                        <p>Are you sure you want to delete this employee record?</p>
+                        <p>Are you sure you want to delete this user?</p>
                         <p>
                             <input type="submit" value="Yes" class="btn btn-danger">
-                            <a href="index.php" class="btn btn-secondary ml-2">No</a>
+                            <a href="crudtable.php" class="btn btn-secondary ml-2">No</a>
                         </p>
                     </div>
                 </form>
