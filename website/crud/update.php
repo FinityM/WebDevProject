@@ -1,5 +1,4 @@
 <?php
-// Include config file
 require_once "../lib/config.php";
 
 $name = $password = "";
@@ -100,7 +99,7 @@ if(isset($_POST["id"]) && !empty($_POST["id"])){
     <meta charset="UTF-8">
     <title>Update Record</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="../css/crud.css">
 </head>
 <body>
 <div class="update-table">

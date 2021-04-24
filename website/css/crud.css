@@ -1,0 +1,55 @@
+* {
+    color: white;
+}
+
+body {
+    background-color: #343a40;
+}
+
+.crud{
+    width: 600px;
+    margin: 0 auto;
+}
+table tr td:last-child{
+    width: 120px;
+}
+
+.create-table{
+    width: 600px;
+    margin: 0 auto;
+}
+
+.read-table{
+    width: 600px;
+    margin: 0 auto;
+}
+
+.update-table{
+    width: 600px;
+    margin: 0 auto;
+
+}
+
+.delete-table{
+    width: 600px;
+    margin: 0 auto;
+
+}
+
+.error{
+    width: 600px;
+    margin: 0 auto;
+}
+
+.fa{
+    color: #99aab5;
+}
+
+.btn{
+    background-color: #7289da;
+}
+
+.btn-success{
+    background-color: #7289da;
+
+}
