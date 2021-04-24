@@ -34,7 +34,7 @@
                         echo "<thead>";
                         echo "<tr>";
                         echo "<th>#</th>";
-                        echo "<th>Name</th>";
+                        echo "<th>Email</th>";
                         echo "<th>Action</th>";
                         echo "</tr>";
                         echo "</thead>";
