@@ -1,5 +1,10 @@
 <?php
-require_once "lib/config.php";
+echo '<title>MKGameStore | Sign Up</title>';
+require "templates/header.php";
+
+?>
+
+<?php
 
 $username = $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
@@ -73,11 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     unset($pdo);
 }
 ?>
-<?php
-echo '<title>MKGameStore | Sign Up</title>';
-require "templates/header.php";
 
-?>
     <div class="signup-form">
         <h2>Sign Up</h2>
         <p>Please fill this form to create an account.</p>

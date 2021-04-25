@@ -1,10 +1,13 @@
 <?php
+echo '<title>MKGameStore | Login</title>';
+require "templates/header.php";
+?>
+
+<?php
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     header("location: index.php");
     exit;
 }
-
-require_once "lib/config.php";
 
 $username = $password = "";
 $username_err = $password_err = $login_err = "";
@@ -68,12 +71,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     unset($pdo);
 }
 ?>
-
-<?php
-echo '<title>MKGameStore | Login</title>';
-require "templates/header.php";
-?>
-
 
     <div class="login-form">
         <h2>Login</h2>

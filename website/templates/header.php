@@ -1,5 +1,6 @@
 <?php
 session_start();
+require "../website/lib/config.php";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -10,6 +11,7 @@ session_start();
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css">
     <link rel="stylesheet" type="text/css"
           href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
@@ -29,7 +31,7 @@ session_start();
         <div class="collapse navbar-collapse" id="navbarCollapse">
             <div class="navbar-nav">
                 <a href="index.php" class="nav-item nav-link">Home</a>
-                <a href="store.php" class="nav-item nav-link">Store</a>
+                <a href="storepage.php" class="nav-item nav-link">Store</a>
                 <a href="contact.php" class="nav-item nav-link">Contact</a>
                 <a href="about.php" class="nav-item nav-link">About</a>
             </div>
