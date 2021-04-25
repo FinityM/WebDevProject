@@ -6,50 +6,51 @@ body {
     background-color: #343a40;
 }
 
-.crud{
+.crud {
     width: 600px;
     margin: 0 auto;
 }
-table tr td:last-child{
+
+table tr td:last-child {
     width: 120px;
 }
 
-.create-table{
+.create-table {
     width: 600px;
     margin: 0 auto;
 }
 
-.read-table{
+.read-table {
     width: 600px;
     margin: 0 auto;
 }
 
-.update-table{
-    width: 600px;
-    margin: 0 auto;
-
-}
-
-.delete-table{
+.update-table {
     width: 600px;
     margin: 0 auto;
 
 }
 
-.error{
+.delete-table {
+    width: 600px;
+    margin: 0 auto;
+
+}
+
+.error {
     width: 600px;
     margin: 0 auto;
 }
 
-.fa{
+.fa {
     color: #99aab5;
 }
 
-.btn{
+.btn {
     background-color: #7289da;
 }
 
-.btn-success{
+.btn-success {
     background-color: #7289da;
 
 }

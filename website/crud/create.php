@@ -15,7 +15,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     $input_password = trim($_POST["password"]);
-    if(empty($input_password)){
+    if (empty($input_password)) {
         $password_err = "Please enter a password";
     } else {
         $password = $input_password;

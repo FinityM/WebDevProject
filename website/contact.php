@@ -1,4 +1,5 @@
 <?php
+echo '<title>MKGameStore | Contact Us</title>';
 require "templates/header.php";
 ?>
 

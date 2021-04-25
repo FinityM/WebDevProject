@@ -41,7 +41,7 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>View Record</title>
+    <title>Read</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="../css/crud.css">
 </head>

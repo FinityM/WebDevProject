@@ -1,4 +1,5 @@
 <?php
+echo '<title>MKGameStore | Home</title>';
 require "templates/header.php";
 ?>
 
@@ -33,7 +34,7 @@ require "templates/header.php";
 <div class="jumbotron" style="background-color: #7289da; text-align: center">
     <h1 class="display-4">Account Status</h1>
     <?php
-    if (isset($_SESSION['id'])){
+    if (isset($_SESSION['id'])) {
         echo "You are logged in";
     } else {
         echo "There is no account logged in";

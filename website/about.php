@@ -1,4 +1,5 @@
 <?php
+echo '<title>MKGameStore | About</title>';
 require "templates/header.php";
 ?>
     <div class="jumbotron" style="background-color: #7289da; text-align: center">
