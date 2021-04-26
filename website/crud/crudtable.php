@@ -25,8 +25,10 @@
                     <a href="create.php" class="btn btn-primary pull-right"><i class="fa fa-plus"></i> Add New User</a>
                 </div>
                 <?php
-                require "..\lib\config.php";
+                // Require the config file
+                require "../lib/config.php";
 
+                // Attempt the SELECT query
                 $sql = "SELECT * FROM users";
                 if ($result = $pdo->query($sql)) {
                     if ($result->rowCount() > 0) {
@@ -52,6 +54,7 @@
                         }
                         echo "</tbody>";
                         echo "</table>";
+                        // Free the result set
                         unset($result);
                     } else {
                         echo '<div class="alert alert-danger"><em>No Records</em></div>';
@@ -60,6 +63,7 @@
                     echo "Something went wrong (✖╭╮✖). Please try again later.";
                 }
 
+                // Close the PDO connection
                 unset($pdo);
                 ?>
             </div>

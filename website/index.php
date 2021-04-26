@@ -34,6 +34,7 @@ require "templates/header.php";
 <div class="jumbotron" style="background-color: #7289da; text-align: center">
     <h1 class="display-4">Account Status</h1>
     <?php
+    // Check for account status
     if (isset($_SESSION['id'])) {
         echo "You are logged in";
     } else {

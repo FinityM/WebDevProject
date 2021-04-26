@@ -13,14 +13,14 @@ html {
 body {
     position: relative;
     min-height: 100%;
-    color: #555555;
-    background-color: #FFFFFF;
+    color: #FFFFFF;
+    background-color: #99aab5;
     margin: 0;
     padding-bottom: 100px; /* Same height as footer */
 }
 
 h1, h2, h3, h4, h5 {
-    color: #394352;
+    color: #FFFFFF;
 }
 
 .content-wrapper {
@@ -29,10 +29,15 @@ h1, h2, h3, h4, h5 {
 }
 
 header {
+
     border-bottom: 1px solid #EEEEEE;
 }
 
 header .content-wrapper {
+    background-color: #343a40;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 100%;
     display: flex;
 }
 
@@ -55,7 +60,7 @@ header nav {
 
 header nav a {
     text-decoration: none;
-    color: #555555;
+    color: #FFFFFF;
     padding: 10px 10px;
     margin: 0 10px;
 }
@@ -75,7 +80,7 @@ header .link-icons {
 
 header .link-icons a {
     text-decoration: none;
-    color: #394352;
+    color: #FFFFFF;
     padding: 0 10px;
 }
 
@@ -152,7 +157,7 @@ main .recentlyadded .products, main .products .products-wrapper {
     padding: 40px 0 0 0;
 }
 
-main .recentlyadded .products .product, main .products .products-wrapper .product {
+main .products .product, main .products .products-wrapper .product {
     display: block;
     overflow: hidden;
     text-decoration: none;
@@ -160,33 +165,33 @@ main .recentlyadded .products .product, main .products .products-wrapper .produc
     padding-bottom: 60px;
 }
 
-main .recentlyadded .products .product img, main .products .products-wrapper .product img {
+main .products .product img, main .products .products-wrapper .product img {
     transform: scale(1);
     transition: transform 1s;
 }
 
-main .recentlyadded .products .product .name, main .products .products-wrapper .product .name {
+main .products .product .name, main .products .products-wrapper .product .name {
     display: block;
-    color: #555555;
+    color: #FFFFFF;
     padding: 20px 0 2px 0;
 }
 
-main .recentlyadded .products .product .price, main .products .products-wrapper .product .price {
+main .products .product .price, main .products .products-wrapper .product .price {
     display: block;
-    color: #999999;
+    color: #FFFFFF;
 }
 
-main .recentlyadded .products .product .rrp, main .products .products-wrapper .product .rrp {
+main .products .product .rrp, main .products .products-wrapper .product .rrp {
     color: #BBBBBB;
     text-decoration: line-through;
 }
 
-main .recentlyadded .products .product:hover img, main .products .products-wrapper .product:hover img {
+main .products .product:hover img, main .products .products-wrapper .product:hover img {
     transform: scale(1.05);
     transition: transform 1s;
 }
 
-main .recentlyadded .products .product:hover .name, main .products .products-wrapper .product:hover .name {
+main .products .product:hover .name, main .products .products-wrapper .product:hover .name {
     text-decoration: underline;
 }
 
@@ -209,7 +214,7 @@ main > .product h1 {
 main > .product .price {
     display: block;
     font-size: 22px;
-    color: #999999;
+    color: #FFFFFF;
 }
 
 main > .product .rrp {
@@ -330,12 +335,12 @@ main .cart table .remove:hover {
 }
 
 main .cart table .price {
-    color: #999999;
+    color: #FFFFFF;
 }
 
 main .cart table a {
     text-decoration: none;
-    color: #555555;
+    color: #FFFFFF;
 }
 
 main .cart table input[type="number"] {
@@ -358,7 +363,7 @@ main .cart .subtotal .text {
 
 main .cart .subtotal .price {
     font-size: 18px;
-    color: #999999;
+    color: #FFFFFF;
 }
 
 main .cart .buttons {
@@ -402,4 +407,5 @@ footer {
     border-top: 1px solid #EEEEEE;
     padding: 20px 0;
     width: 100%;
+    background-color: #343a40;
 }

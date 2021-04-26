@@ -1,10 +1,15 @@
 <?php
+// Require the config file
 require_once "../lib/config.php";
 
+// Declare variables for username and password, initialized with empty values
 $name = $password = "";
 $name_err = $password_err = "";
 
+// Form processing
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+    // Validate email
     $input_name = trim($_POST["name"]);
     if (empty($input_name)) {
         $name_err = "Please enter an email.";
@@ -14,6 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $name = $input_name;
     }
 
+    // Validate password
     $input_password = trim($_POST["password"]);
     if (empty($input_password)) {
         $password_err = "Please enter a password";
@@ -21,18 +27,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password = $input_password;
     }
 
-
-    if (empty($name_err && empty($password_err))) {
+    // Check the input errors before placing into database
+    if (empty($name_err) && empty($password_err)) {
         $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
 
         if ($stmt = $pdo->prepare($sql)) {
+
+            // Bind variables to prepared statement as parameters
             $stmt->bindParam(":username", $param_name);
             $stmt->bindParam(":password", $param_password);
 
+            // Set the parameters
             $param_name = $name;
             $param_password = $password;
 
+            // Attempt to execute prepared statement
             if ($stmt->execute()) {
+                // If record is created successfully redirect to the main CRUD page
                 header("location: crudtable.php");
                 exit();
             } else {
@@ -40,9 +51,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             }
         }
 
+        // Close the statement
         unset($stmt);
     }
 
+    // Close the PDO connection
     unset($pdo);
 }
 ?>

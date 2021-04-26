@@ -1,3 +1,4 @@
+<!--Store header -->
 <!DOCTYPE html>
 <html>
 <head>
@@ -10,8 +11,8 @@
     <div class="content-wrapper">
         <h1>MKGameStore</h1>
         <nav>
-            <a href="..\website\index.php">Home</a>
-            <a href="..\website\storeindex.php">Store</a>
+            <a href="../website/index.php">Home</a>
+            <a href="../website/storeindex.php">Store</a>
         </nav>
         <div class="link-icons">
             <a href="storeindex.php?page=cart">

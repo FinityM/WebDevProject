@@ -23,7 +23,7 @@ require "templates/header.php";
     <div class="jumbotron" style="background-color: #7289da; text-align: center">
         <h1 class="display-4">Visit our store </h1>
         <p class="lead">
-            <a class="btn btn-primary btn-lg" href="store.php" role="button">Here</a>
+            <a class="btn btn-primary btn-lg" href="../website/storepage.php" role="button">Here</a>
         </p>
 
     </div>

@@ -1,4 +1,7 @@
-<?php $year = date('Y');
+<!--Store footer-->
+<?php
+// Code to get current year
+$year = date('Y');
 
 ?>
 </main>
@@ -7,6 +10,5 @@
         <p> &copy;<?php echo $year ?> MKGameStore</p>
     </div>
 </footer>
-<script src="script.js"></script>
 </body>
 </html>

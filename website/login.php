@@ -4,28 +4,34 @@ require "templates/header.php";
 ?>
 
 <?php
+// If user is logged in redirect to the main home page
 if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
     header("location: index.php");
     exit;
 }
 
+// Define variables and initialise with empty values
 $username = $password = "";
 $username_err = $password_err = $login_err = "";
 
+// Form data processing when submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    // Check for empty usernames
     if (empty(trim($_POST["username"]))) {
         $username_err = "Please enter an email";
     } else {
         $username = trim($_POST["username"]);
     }
 
+    // Check for empty passwords
     if (empty(trim($_POST["password"]))) {
         $password_err = "Please enter a password.";
     } else {
         $password = trim($_POST["password"]);
     }
 
+    // Validate the credentials
     if (empty($username_err) && empty($password_err)) {
 
         $sql = "SELECT id, username, password FROM users WHERE username = :username";
@@ -33,24 +39,27 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($stmt = $pdo->prepare($sql)) {
             $stmt->bindParam(":username", $param_username, PDO::PARAM_STR);
 
+            // Set the parameters
             $param_username = trim($_POST["username"]);
 
+            // Attempt to execute the prepared statement
             if ($stmt->execute()) {
 
+                // Check if the username exists
                 if ($stmt->rowCount() == 1) {
                     if ($row = $stmt->fetch()) {
                         $id = $row["id"];
                         $username = $row["username"];
-                        $hashed_password = $row["password"];
 
                         if ($password) {
-
+                            // If password is correct start a new session
                             session_start();
 
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
                             $_SESSION["username"] = $username;
 
+                            // Redirect to the main home page
                             header("location: index.php");
                         } else {
 
@@ -65,9 +74,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "Something went wrong (✖╭╮✖). Please try again later.";
             }
 
+            // Close the statement
             unset($stmt);
         }
     }
+
+    // Close the PDO connection
     unset($pdo);
 }
 ?>

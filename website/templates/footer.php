@@ -1,3 +1,4 @@
+<!--Main page footer-->
 <footer class="footer">
     <div class="footer-container">
         <div class="row">

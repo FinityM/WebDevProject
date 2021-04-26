@@ -5,22 +5,28 @@ require "templates/header.php";
 ?>
 
 <?php
-
+// Define variables with empty values
 $username = $password = $confirm_password = "";
 $username_err = $password_err = $confirm_password_err = "";
 
+// Form processing for when it's submitted
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
+    // Validate the username
     if (empty(trim($_POST["username"]))) {
         $username_err = "Please enter an email.";
     } else {
+        // Prepare the select statement
         $sql = "SELECT id FROM users WHERE username = :username";
 
         if ($stmt = $pdo->prepare($sql)) {
+            // Bind variables to prepared statement as parameters
             $stmt->bindParam(":username", $param_username, PDO::PARAM_STR);
 
+            // Set the parameters
             $param_username = trim($_POST["username"]);
 
+            // Attempt to execute the prepared statement
             if ($stmt->execute()) {
                 if ($stmt->rowCount() == 1) {
                     $username_err = "That email is taken.";
@@ -31,10 +37,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 echo "Something went wrong (✖╭╮✖). Please try again later.";
             }
 
+            // Close the statement
             unset($stmt);
         }
     }
 
+    // Password validation
     if (empty(trim($_POST["password"]))) {
         $password_err = "Please enter a password.";
     } elseif (strlen(trim($_POST["password"])) < 6) {
@@ -43,6 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $password = trim($_POST["password"]);
     }
 
+    // Confirm password validation
     if (empty(trim($_POST["confirm_password"]))) {
         $confirm_password_err = "Please confirm password.";
     } else {
@@ -52,8 +61,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         }
     }
 
+    // Check input errors before inserting into the database
     if (empty($username_err) && empty($password_err) && empty($confirm_password_err)) {
 
+        // Prepare an insert statement
         $sql = "INSERT INTO users (username, password) VALUES (:username, :password)";
 
         if ($stmt = $pdo->prepare($sql)) {
@@ -64,17 +75,21 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $param_username = $username;
             $param_password = $password;
 
+            // Attempt to execute the prepared statement
             if ($stmt->execute()) {
 
+                //Redirect to the login page
                 header("location: login.php");
             } else {
-                echo "Oops! Something went wrong. Please try again later.";
+                echo "Something went wrong (✖╭╮✖). Please try again later.";
             }
 
+            // Close the statement
             unset($stmt);
         }
     }
 
+    // Close the PDO connection
     unset($pdo);
 }
 ?>

@@ -1,25 +1,32 @@
 <?php
+// Check for the id before processing
 if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
 
+    // Require the config file once
     require_once "../lib/config.php";
 
+    // Prepare the select statement
     $sql = "SELECT * FROM users WHERE id = :id";
 
     if ($stmt = $pdo->prepare($sql)) {
 
+        // Bind the variables to the prepared statement as parameters
         $stmt->bindParam(":id", $param_id);
 
+        // Set the parameters
         $param_id = trim($_GET["id"]);
 
+        // Attempt to execute the prepared statement
         if ($stmt->execute()) {
             if ($stmt->rowCount() == 1) {
-
+                /* Fetch the result as an associative array. Since the set only contains one row, while loop isn't required*/
                 $row = $stmt->fetch(PDO::FETCH_ASSOC);
 
+                // Retrieve the field value
                 $name = $row["username"];
 
             } else {
-
+                // Redirect to error page if it fails
                 header("location: error.php");
                 exit();
             }
@@ -29,10 +36,13 @@ if (isset($_GET["id"]) && !empty(trim($_GET["id"]))) {
         }
     }
 
+    // Close the statement
     unset($stmt);
 
+    // Close the connection
     unset($pdo);
 } else {
+    // Redirect to the error page
     header("location: error.php");
     exit();
 }

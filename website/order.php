@@ -1,3 +1,4 @@
+<!--Order page-->
 <?php require "templates/storeheader.php"?>
 
 <div class="placeorder content-wrapper">

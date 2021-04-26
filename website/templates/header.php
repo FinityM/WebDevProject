@@ -1,3 +1,4 @@
+<!--Main page header-->
 <?php
 session_start();
 require "../website/lib/config.php";
