@@ -17,7 +17,6 @@
         <div class="link-icons">
             <a href="storeindex.php?page=cart">
                 <i class="fas fa-shopping-cart"></i>
-                <span><?php $num_items_in_cart = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;  $num_items_in_cart?></span>
             </a>
         </div>
     </div>

@@ -28,3 +28,4 @@ INSERT INTO products (`id`, `name`, `desc`, `price`, `rrp`, `quantity`, `img`, `
 (1, 'Cyberpunk', '<p>Cyberpunk</p>', '59.99', '0.00', 100, 'Cyberbonk.jpg', '2021-04-25 14:11:00'),
 (2, 'Doom Eternal', '<p>Doom Eternal</p>', '14.99', '59.99', 100, 'doooooomeeeeteeernaaaal.jpg', '2021-04-25 14:11:00'),
 (3, 'Halo Infinite', '<p>Halo Infinite</p>', '69.99', '0.00', 100, 'images/HaloInfinite.jpg', '2021-04-25 14:11:00');
+
