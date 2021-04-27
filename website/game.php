@@ -49,4 +49,4 @@ require "templates/storeheader.php" ?>
     </div>
 </div>
 
-<? require "templates/storefooter.php" ?>
+<?php require "templates/storefooter.php" ?>

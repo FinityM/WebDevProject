@@ -145,4 +145,4 @@ if ($products_in_cart) {
     </form>
 </div>
 
-<? require "templates/storefooter.php" ?>
+<?php require "templates/storefooter.php" ?>

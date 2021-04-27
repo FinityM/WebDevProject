@@ -4,7 +4,6 @@
     font-size: 16px;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    color: #000000;
     line-height: 1.5;
 }
 
@@ -27,7 +26,7 @@ body {
 
 header .content-wrapper {
     background-color: #343a40;
-    color: #000000;
+    color: rgba(255,255,255,.5);
     padding: 20px;
     width: 100%;
     display: flex;
@@ -52,7 +51,7 @@ header nav {
 
 header nav a {
     text-decoration: none;
-    color: #000000;
+    color: rgba(255,255,255,.5);
     padding: 10px 10px;
     margin: 0 10px;
 }
@@ -72,7 +71,7 @@ header .link-icons {
 
 header .link-icons a {
     text-decoration: none;
-    color: #FFFFFF;
+    color: rgba(255,255,255,.5);
     padding: 0 10px;
 }
 
@@ -155,6 +154,7 @@ main .products .product, main .products .products-wrapper .product {
     text-decoration: none;
     width: 25%;
     padding-bottom: 60px;
+    color: #000000;
 }
 
 main .products .product img, main .products .products-wrapper .product img {
@@ -314,7 +314,7 @@ main .cart table .img {
 }
 
 main .cart table .remove {
-    color: #777777;
+    color: #000000;
     font-size: 12px;
     padding-top: 3px;
 }
@@ -324,6 +324,7 @@ main .cart table .remove:hover {
 }
 
 main .cart table a {
+    color: #000000;
     text-decoration: none;
 }
 
@@ -390,4 +391,5 @@ footer {
     padding: 20px 0;
     width: 100%;
     background-color: #343a40;
+    color: rgba(255,255,255,.5);
 }
